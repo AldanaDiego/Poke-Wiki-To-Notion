@@ -1,0 +1,28 @@
+{
+  "name": "poke-wiki-to-notion",
+  "version": "1.0.0",
+  "description": "Web Scraper to get information from Pokemon Wiki sites and add it to Notion",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npx nodemon -L app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AldanaDiego/Poke-Wiki-To-Notion.git"
+  },
+  "author": "Diego Aldana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AldanaDiego/Poke-Wiki-To-Notion/issues"
+  },
+  "homepage": "https://github.com/AldanaDiego/Poke-Wiki-To-Notion#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "jsdom": "^21.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
