@@ -48,9 +48,8 @@ async function getMoveInfo(moveName) {
                     if (h2.textContent === "Description") {
                         const descriptions = h2.nextElementSibling.querySelectorAll("tr");
                         for (let i = descriptions.length - 1; i > 0; i--) {
-                            const description = descriptions[i].querySelectorAll("td")[1].textContent;
-                            console.log(description);
-                            if (description.includes("This move can't be used")) {
+                            const description = descriptions[i].querySelectorAll("td")[1].textContent.trim();
+                            if (description.includes("This move can't be used") || description === '') {
                                 continue;
                             }
                             moveInfo.Effect = description.replace('.\n', '');
