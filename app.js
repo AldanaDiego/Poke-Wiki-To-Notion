@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
+const routes = require('./src/routes/routes.js');
+
 app.use(bodyParser.json());
 app.use(function(err, req, res, callback) {
     if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
@@ -15,6 +17,8 @@ app.use(function(err, req, res, callback) {
     }
 });
 app.use(express.json());
+
+app.use('/', routes);
 
 app.get('/', (req, res) => {
     res.send('Poke-Wiki-To-Notion 1.0.0 ' + new Date().toString());
