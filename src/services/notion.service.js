@@ -22,6 +22,24 @@ async function addMove(moveInfo) {
     });
 }
 
+async function addAbility(abilityInfo)
+{
+    return Notion.pages.create({
+        parent: { type: "database_id", database_id: process.env.NOTION_ABILITY_DB },
+        properties: {
+            Ability: { title: [{ text: { content: abilityInfo.Name } }] },
+            'Original Effect': { rich_text: [{ text: { content: abilityInfo.Effect } }] },
+            Generation: { rich_text: [{ text: { content: abilityInfo.Generation } }] },
+        }
+    }).then(resp => {
+        return resp;
+    }).catch(err => {
+        console.log("Exception while sending ability info to Notion: " + err.message | "undefined error");
+        return null;
+    });
+}
+
 module.exports = {
-    addMove
+    addMove,
+    addAbility
 }
