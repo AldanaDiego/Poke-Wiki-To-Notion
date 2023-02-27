@@ -18,7 +18,6 @@ async function getAbilityInfo(abilityName) {
                 abilityInfo.Generation = descriptions[0].querySelector("th").textContent.trim();
                 abilityInfo.Generation = abilityInfo.Generation.slice(abilityInfo.Generation.indexOf(' '));
                 abilityInfo.Effect = effectRow[effectRow.length - 1].textContent.trim().replace('.\n', '');
-                console.log(abilityInfo);
 
                 return abilityInfo;
             } catch (err) {
